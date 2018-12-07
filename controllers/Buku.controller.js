@@ -16,19 +16,15 @@ class BukuController {
     buku
       .save()
       .then(data => {
-        res.json({
+        res.status(201).json({
           data: data,
-          status: {
-            message: "Berhasil menambahkan buku"
-          }
+          message: "Success"
         });
       })
-      .catch(error => {
-        res.json({
+      .catch(() => {
+        res.status(500).json({
           data: null,
-          status: {
-            message: "Gagal menambahkan buku"
-          }
+          message: "Internal server error"
         });
       });
   }
@@ -36,19 +32,15 @@ class BukuController {
   static findAll(req, res) {
     Buku.find()
       .then(buku => {
-        res.json({
+        res.status(200).json({
           data: buku,
-          status: {
-            message: "Success"
-          }
+          message: "Success"
         });
       })
-      .catch(error => {
-        res.json({
+      .catch(() => {
+        res.status(500).json({
           data: null,
-          status: {
-            message: "Error"
-          }
+          message: "Internal server error"
         });
       });
   }
@@ -63,7 +55,7 @@ class BukuController {
             message: "Buku tidak ditemukan"
           });
         }
-        res.json({
+        res.status(200).json({
           data: buku,
           message: "Success"
         });
@@ -83,20 +75,53 @@ class BukuController {
   }
 
   static update(req, res) {
-    
+    let { bId } = req.params;
+    let { judul, pengarang, penerbit, tahun_terbit } = req.body;
+    let updatedBuku = {};
+
+    // Kondisi untuk merubah data berdasarkan
+    // value yang dimasukan dalam request body
+    if (judul) {
+      updatedBuku.judul = judul;
+    }
+
+    if (pengarang) {
+      updatedBuku.pengarang = pengarang;
+    }
+
+    if (penerbit) {
+      updatedBuku.penerbit = penerbit;
+    }
+
+    if (tahun_terbit) {
+      updatedBuku.tahun_terbit = tahun_terbit;
+    }
+
+    Buku.findByIdAndUpdate(bId, updatedBuku, { new: true })
+      .then(updated => {
+        res.status(201).json({
+          data: updated,
+          message: "Succes"
+        });
+      })
+      .catch(() => {
+        res.status(500).json({
+          message: "Internal server error"
+        });
+      });
   }
 
   static delete(req, res) {
     let { bId } = req.params;
     Buku.findByIdAndUpdate(bId)
       .then(() => {
-        res.json({
+        res.status(200).json({
           message: "Berhasil hapus buku"
         });
       })
       .catch(() => {
-        res.json({
-          message: "Gagal hapus buku"
+        res.status(500).json({
+          message: "Internal server error"
         });
       });
   }

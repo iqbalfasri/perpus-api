@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.send("Pustaka API");
+  res.json("Pustaka API");
 });
 
 module.exports = router;

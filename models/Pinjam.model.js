@@ -2,13 +2,23 @@ var mongoose = require("mongoose");
 var { Schema } = mongoose;
 
 const PinjamSchema = mongoose.Schema({
-  no_anggota: [{ type: Schema.Types.ObjectId, ref: "anggota" }],
-  no_buku: [{ type: Schema.Types.ObjectId, ref: "buku" }],
+  id_anggota: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "anggota",
+    required: true
+  },
+  id_buku: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "buku",
+    required: true
+  },
   tgl_pinjam: {
-    type: Date
+    type: Date,
+    required: true
   },
   tgl_kembali: {
-    type: Date
+    type: Date,
+    required: true
   }
 });
 

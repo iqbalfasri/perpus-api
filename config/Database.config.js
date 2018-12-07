@@ -1,3 +1,3 @@
 module.exports = {
-  url: 'mongodb://localhost:27017/pustaka'
+  url: process.env.PRODUCTION || 'mongodb://localhost:27017/pustaka'
 }

@@ -9,11 +9,11 @@ const AnggotaSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  no_telp: {
+  no_tlp: {
     type: String,
     required: true
   },
-  tanggal_masuk: {
+  tgl_masuk: {
     type: Date,
     default: Date.now()
   }
