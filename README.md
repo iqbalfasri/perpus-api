@@ -3,4 +3,4 @@
 
 ## Built with
 * NodeJS using Express Generator
-* MongoDB ( mongoose )
+* MongoDB with mongoose
