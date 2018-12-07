@@ -1,6 +1,8 @@
 {
   "name": "pustaka",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "author": "Muhammad Iqbal Fasri",
+  "email": "iqbalx64@gmail.com",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
