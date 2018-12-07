@@ -1,24 +1,24 @@
 var mongoose = require("mongoose");
 
-const BukuSchema = mongoose.Schema({
-  judul: {
+const AnggotaSchema = mongoose.Schema({
+  name: {
     type: String,
     required: true
   },
-  pengarang: {
+  email: {
     type: String,
     required: true
   },
-  penerbit: {
+  no_telp: {
     type: String,
     required: true
   },
-  tahun_terbit: {
-    type: String,
-    required: true
+  tanggal_masuk: {
+    type: Date,
+    default: Date.now()
   }
 }, {
   timestamps: true
 });
 
-module.exports = mongoose.model('Buku', BukuSchema);
+module.exports = mongoose.model('anggota', AnggotaSchema);
