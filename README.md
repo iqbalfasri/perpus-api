@@ -6,4 +6,6 @@
 * **MongoDB** with mongoose
 
 ## How to run
-* clone this repo ```https://github.com/iqbalfasri/perpus-api.git```
+* Clone this repo ```https://github.com/iqbalfasri/perpus-api.git```
+* ```$ cd perpus-api``` & ```npm install && npm start```
+* server running on port ```2000```
