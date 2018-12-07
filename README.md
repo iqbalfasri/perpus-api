@@ -2,5 +2,5 @@
 <p align="center">Simple RESTful API untuk pinjam buku perpustakaan</p>
 
 ## Built with
-* NodeJS using Express Generator
-* MongoDB with mongoose
+* **NodeJS** using Express Generator
+* **MongoDB** with mongoose
