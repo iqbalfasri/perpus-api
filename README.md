@@ -4,3 +4,6 @@
 ## Built with
 * **NodeJS** using Express Generator
 * **MongoDB** with mongoose
+
+## How to run
+* clone this repo ```https://github.com/iqbalfasri/perpus-api.git```
